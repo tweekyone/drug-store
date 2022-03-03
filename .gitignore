@@ -12,6 +12,7 @@ target/
 
 # Docker data
 db-data/
+*.env
 
 # Coverage report
 coverege-report/
