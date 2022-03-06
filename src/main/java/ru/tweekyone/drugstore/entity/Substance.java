@@ -28,7 +28,7 @@ public class Substance {
     @Column(name = "pharm_group", nullable = false)
     private String pharmGroup;
 
-    @Column(name = "isVital", nullable = false)
+    @Column(name = "is_vital", nullable = false)
     private Boolean isVital;
 
     @OneToMany(mappedBy = "drug", orphanRemoval = true, cascade = CascadeType.ALL)

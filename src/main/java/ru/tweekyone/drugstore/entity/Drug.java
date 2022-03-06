@@ -22,6 +22,9 @@ public class Drug {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "drug_id_seq")
     private Long id;
 
+    @Column(name = "trade_name")
+    private String tradeName;
+
     @ManyToOne
     private Substance substance;
 
@@ -31,7 +34,7 @@ public class Drug {
     @Column(name = "margin")
     private Double margin;
 
-    @Column(name = "wholesaleMargin")
+    @Column(name = "wholesale_margin")
     private Double wholesaleMargin;
 
     @ManyToOne
@@ -52,6 +55,6 @@ public class Drug {
     @Column(name = "code", nullable = false)
     private String code;
 
-    @Column(name = "sertificate_number", nullable = false)
-    private String sertificateNumber;
+    @Column(name = "certificate_number", nullable = false)
+    private String certificateNumber;
 }
