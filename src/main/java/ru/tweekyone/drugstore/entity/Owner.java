@@ -13,11 +13,11 @@ import java.util.List;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "owner", schema = "public")
+@Table(name = "owner_producer", schema = "public")
 public class Owner {
 
     @Id
-    @Column(name = "id")
+    @Column(name = "op_id")
     @SequenceGenerator(name = "owner_id_seq", sequenceName = "owner_id_seq", allocationSize = 1)
     @GeneratedValue(generator = "owner_id_seq", strategy = GenerationType.SEQUENCE)
     private Long id;

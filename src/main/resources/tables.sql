@@ -12,14 +12,8 @@ CREATE TABLE substance (
     is_vital BOOLEAN NOT NULL
 );
 
-CREATE TABLE producer (
-    producer_id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY ,
-    name VARCHAR(255) NOT NULL ,
-    country VARCHAR(50) NOT NULL
-);
-
-CREATE TABLE owner (
-    owner_id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY ,
+CREATE TABLE owner_producer (
+    op_id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY ,
     name VARCHAR(255) NOT NULL ,
     country VARCHAR(50) NOT NULL
 );
@@ -37,9 +31,9 @@ CREATE TABLE drug (
     best_before DATE ,
     series VARCHAR(255) ,
     code VARCHAR(255) ,
-    certificate_number VARCHAR(10) NOT NULL,
+    certificate_number VARCHAR(20) NOT NULL,
     CONSTRAINT fc_substance FOREIGN KEY (substance_id) REFERENCES substance(substance_id) ,
-    CONSTRAINT fc_producer FOREIGN KEY (producer_id) REFERENCES producer(producer_id) ,
-    CONSTRAINT fc_owner FOREIGN KEY (owner_id) REFERENCES owner(owner_id)
+    CONSTRAINT fc_producer FOREIGN KEY (producer_id) REFERENCES owner_producer(op_id) ,
+    CONSTRAINT fc_owner FOREIGN KEY (owner_id) REFERENCES owner_producer(op_id)
 );
 
