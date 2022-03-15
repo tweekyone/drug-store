@@ -31,7 +31,7 @@ public class Substance {
     @Column(name = "is_vital", nullable = false)
     private Boolean isVital;
 
-    @OneToMany(mappedBy = "drug", orphanRemoval = true, cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "substance", orphanRemoval = true, cascade = CascadeType.ALL)
     private List<Drug> drugs;
 }
 

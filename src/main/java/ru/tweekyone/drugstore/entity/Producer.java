@@ -17,7 +17,7 @@ import java.util.List;
 public class Producer {
 
     @Id
-    @Column(name = "op_id")
+    @Column(name = "producer_id")
     @SequenceGenerator(name = "producer_id_seq", sequenceName = "producer_id_seq", initialValue = 1)
     @GeneratedValue(generator = "producer_id_seq", strategy = GenerationType.SEQUENCE)
     private Long id;

@@ -3,3 +3,4 @@ spring:
     url: jdbc:postgresql://localhost:5333/drugstore
     username: user
     password: user
+    driver-class-name: org.postgresql.Driver
