@@ -17,7 +17,7 @@ import java.util.List;
 public class Substance {
 
     @Id
-    @Column(name = "id")
+    @Column(name = "substance_id")
     @SequenceGenerator(name = "substance_id_seq", sequenceName = "substance_id_seq", allocationSize = 1)
     @GeneratedValue(generator = "substance_id_seq", strategy = GenerationType.SEQUENCE)
     private Long id;

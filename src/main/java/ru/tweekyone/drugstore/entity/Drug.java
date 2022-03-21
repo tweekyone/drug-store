@@ -17,7 +17,7 @@ import java.time.LocalDate;
 public class Drug {
 
     @Id
-    @Column(name = "id")
+    @Column(name = "drug_id")
     @SequenceGenerator(name = "drug_id_seq", sequenceName = "drug_id_seq", allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "drug_id_seq")
     private Long id;
@@ -26,6 +26,7 @@ public class Drug {
     private String tradeName;
 
     @ManyToOne
+    @JoinColumn(name = "substance_id")
     private Substance substance;
 
     @Column(name = "price", nullable = false)
@@ -38,9 +39,11 @@ public class Drug {
     private Double wholesaleMargin;
 
     @ManyToOne
+    @JoinColumn(name = "producer_id")
     private Producer producer;
 
     @ManyToOne
+    @JoinColumn(name = "owner_id")
     private Owner owner;
 
     @Column(name = "balance")

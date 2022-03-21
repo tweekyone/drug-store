@@ -14,19 +14,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "owner_producer", schema = "public")
-public class Owner {
-
-    @Id
-    @Column(name = "owner_id")
-    @SequenceGenerator(name = "owner_id_seq", sequenceName = "owner_id_seq", allocationSize = 1)
-    @GeneratedValue(generator = "owner_id_seq", strategy = GenerationType.SEQUENCE)
-    private Long id;
-
-    @Column(name = "name", nullable = false)
-    private String name;
-
-    @Column(name = "country", nullable = false)
-    private String country;
+public class Owner extends OPAbstractClass{
 
     @OneToMany(mappedBy = "owner", orphanRemoval = true, cascade = CascadeType.ALL)
     private List<Drug> drugs;

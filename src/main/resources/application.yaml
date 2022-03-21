@@ -4,3 +4,10 @@ spring:
     username: user
     password: user
     driver-class-name: org.postgresql.Driver
+
+  logging:
+      level:
+        org.hibernate: ERROR
+
+  jpa:
+    show-sql: true
