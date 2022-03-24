@@ -1,8 +1,15 @@
 package ru.tweekyone.drugstore.entity;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
 
 @MappedSuperclass
+@Getter
+@Setter
 public abstract class OPAbstractClass {
 
     @Id

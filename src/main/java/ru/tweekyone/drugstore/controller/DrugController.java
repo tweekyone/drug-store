@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import ru.tweekyone.drugstore.controller.dto.response.DrugResponse;
 import ru.tweekyone.drugstore.entity.Drug;
 import ru.tweekyone.drugstore.service.DrugService;
 
@@ -24,7 +25,7 @@ public class DrugController {
     private final DrugService drugService;
 
     @GetMapping(value = "/{drugId}/id")
-    public ResponseEntity<Drug> getDrugById(
+    public ResponseEntity<DrugResponse> getDrugById(
             @PathVariable("drugId")
             @NotNull Long drugId) {
         return new ResponseEntity<>(drugService.findById(drugId), HttpStatus.OK);
