@@ -1,7 +1,5 @@
 package ru.tweekyone.drugstore.entity;
 
-import com.fasterxml.jackson.annotation.JsonIdentityInfo;
-import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -14,8 +12,8 @@ public abstract class OPAbstractClass {
 
     @Id
     @Column(name = "op_id")
-    @SequenceGenerator(name = "owner_id_seq", sequenceName = "owner_id_seq", allocationSize = 1)
-    @GeneratedValue(generator = "owner_id_seq", strategy = GenerationType.SEQUENCE)
+    @SequenceGenerator(name = "op_id_seq", sequenceName = "op_id_seq", allocationSize = 1)
+    @GeneratedValue(generator = "op_id_seq", strategy = GenerationType.SEQUENCE)
     private Long id;
 
     @Column(name = "name", nullable = false)
